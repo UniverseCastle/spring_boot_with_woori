@@ -1,0 +1,45 @@
+package com.example.lamda;
+/*
+	람다식 (익명함수)
+	(타입 매개변수) -> {실행문;}
+	(int a) -> {System.out.println(a);}
+	() -> System.out.println(a);	매개변수가 없는 경우 비워도됨 / 타입 생략 가능
+	(x, y) -> {return x+y;}			
+	(x, y) -> return x+y;
+*/
+
+interface Test1 {
+//	매개변수가 없는 추상 메서드
+	public abstract void name();
+}
+interface Test2 {
+//	매개변수가 하나인 추상 메서드
+	public abstract void name(String name);
+}
+interface Test3 {
+//	두 개의 매개변수를 가진 추상 메서드
+	public abstract void name(String name, int age);
+}
+interface Test4 {
+//	두 개의 정수 매개변수를 가진 추상 메서드
+	public abstract void name(int a, int b);
+}
+
+public class Ex01 {
+	public static void main(String[] args) {
+		
+//		익명클래스로 Test1 인터페이스 구현
+		Test1 t = new Test1() {
+//		name 메서드 구현
+			public void name() {
+				System.out.println("김자바");
+			}
+		};
+		t.name();
+		
+//		람다식으로 Test2 인터페이스 구현 - 매개변수 1개
+		Test2 t2 = n -> {
+			System.out.println(n);
+		};
+	}
+}

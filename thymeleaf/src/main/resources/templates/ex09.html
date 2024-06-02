@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>세션 사용</h1>
+	<h1 th:text="${session.sid}"></h1> 
+	<h1 th:text="'세션 = ' + ${session.sid}"></h1>
+	
+	세션 sid 값 확인	= [[${session.sid}]]		<br />
+	세션 저장된 개수	= [[${session.size()}]]		<br />
+	세션 비어있는지 확인	= [[${session.isEmpty()}]]	<br />
+	특정 세션키 sid 있는지 확인	= [[${session.containsKey('sid')}]]	<br />
+	
+	- 변수 표현식을 th:text 와 같은 타임리프의 속성 이외에
+	  단순 사용 시 [[ ${} ]] 대괄호로 묶어줘야 한다.
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>th:attr 속성 활용</h3>
+	- 여러 속성을 한 번에 설정
+	
+	<a th:href="@{/th/main}" th:title="${'my page'}">Main</a>	<!-- href 안에 변수표현식이 있으면 || 기호, th:title="" 안에 변수표현식 썼으므로 || 없어도됨 -->
+	<br />
+	<a th:attr="href=@{/th/main}, title=${'my page'}">Main</a>	<!-- th:attr 속성 내부에서 여러 속성을 지정할 때 작은따옴표가 사용되지 않는다. -->
+	<!-- @{/th/main}는 URL /th/main을 의미한다. 이 구문은 URL을 지정할 때 사용되며, 이 경우 작은따옴표가 필요하지 않는다. -->
+</body>
+</html>

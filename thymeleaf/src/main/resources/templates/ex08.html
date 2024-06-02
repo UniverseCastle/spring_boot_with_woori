@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>파라미터 사용</h1>
+	http://localhost:8080/th/ex08?name=java&age=10
+	<h1 th:text="${param.name}"></h1>
+	<h1 th:text="${param.age}"></h1>
+</body>
+</html>

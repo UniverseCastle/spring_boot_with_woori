@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	select
+		distinct q.id,		<!-- 중복 제거 outer 조인이라 중복된값 나옴 -->
+		q.author_id,
+		q.content,
+		q.create_date,
+		q.modify_date,
+		q.subject
+	from question q
+		left outer join site_user u1 on q.author_id = u1.id
+		left outer join answer a on q.id = a.question_id
+		left outer join site_user u2 on a.author_id = u2.id
+	where
+		q.subject like '%스프링%'
+		or q.content like '%스프링%'
+		or u1.username like '%스프링%'
+		or a.content list'%스프링%'
+		or u2.username like '%스프링%'
+		
+	Specification
+</body>
+</html>

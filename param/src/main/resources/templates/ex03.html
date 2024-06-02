@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ex03</title>
+</head>
+<body>
+	<h3>리스트</h3>
+	<p>취미 : <span th:each="hobby : ${hobbies}" th:text="${hobby} + ', '"></span></p>
+	
+	<h3>배열</h3>
+	
+	<p>취미 : <span th:each="arr : ${arr}" th:text="${arr} + ', '"></span></p>
+</body>
+</html>

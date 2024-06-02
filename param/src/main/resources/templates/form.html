@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+</head>
+<body>
+	<h3>form --> ex01</h3>
+	<form th:action="@{/param/ex01}" method="post">
+		<label for="id">아이디 : </label>
+		<input type="text" name="id" id="id" required		/>	<br />
+		<label for="pw"> 비밀번호 : </label>
+		<input type="password" name="pw" id="pw" required	/>	<br />
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="gray"	/>
+	
+	<h3>form --> ex02</h3>
+	<form th:action="@{/param/ex02}"	method="post">
+		<label for="id2">아이디 : </label>
+		<input type="text" name="id" id="id2" style="font-size: 30px;" required		/>	<br />
+		<label for="pw2">비밀번호 : </label>
+		<input type="password" name="pw" id="pw2" style="font-size: 30px;" required	/>	<br />
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="darkgray"	/>
+	
+	<h3>form --> ex03</h3>
+	<form th:action="@{/param/ex03}" method="post">
+		<label>취미 : </label>
+		<input type="checkbox" name="hobbies" id="hobby1" value="sports"	/>
+		<label for="hobby1">운동</label>	&nbsp;
+		<input type="checkbox" name="hobbies" id="hobby2" value="reading"	/>
+		<label for="hobby2">독서</label>	&nbsp;
+		<input type="checkbox" name="hobbies" id="hobby3" value="traveling"	/>
+		<label for="hobby3">여행</label>	&nbsp;
+		<input type="checkbox" name="hobbies" id="hobby4" value="game"		/>
+		<label for="hobby4">게임</label>	<br	/>
+		
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="lightgray"	/>
+	
+	<h3>form --> ex04</h3>
+	<form th:action="@{/param/ex04}" method="post">
+		<label for="id">아이디 : </label>
+		<input type="text" name="id" id="id" style="font-size: 30px;" required			/>	<br />
+		
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="lightgray"	/>
+	
+	<h3>form --> ex05</h3>
+	<form th:action="@{/param/ex05}" method="post">
+		<label for="id">아이디 : </label>
+		<input type="text" name="id" id="id" style="font-size: 30px;" required			/>	<br />
+		
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="silver"	/>
+	
+	<h3>form --> ex09</h3>
+	<form th:action="@{/param/ex09}" method="post" enctype="multipart/form-data">
+		<label for="id">아이디 : </label>
+		<input type="text" name="id" id="id" required		/>	<br />
+		
+		<label for="save">파일 : </label>
+		<input type="file" name="save" id="save" required	/>	<br />
+		
+		<button type="submit" style="cursor: pointer">전송</button>
+	</form>
+
+	<hr color="silver"	/>
+	
+	<h3>form --> ex10</h3>
+	<form th:action="@{/param/ex10}" method="post" enctype="multipart/form-data">
+		<label for="id">아이디 : </label>
+		<input type="text" name="id" id="id" required		/>	<br />
+		
+		<label for="save1">파일1 : </label>
+		<input type="file" name="save" id="save1" required	/>	<br />
+		<label for="save2">파일2 : </label>
+		<input type="file" name="save" id="save2" required	/>	<br />
+		<label for="save3">파일3 : </label>
+		<input type="file" name="save" id="save3" required	/>	<br /> 
+		
+		<button type="submit">전송</button>
+	</form>
+	
+	<hr color="gold"	/>
+	
+	<h3>form --> ex11</h3>
+	<form th:action="@{/param/ex11}" method="post" enctype="multipart/form-data">
+		<label for="save">파일 : </label>
+		<input type="file" name="save" id="save" required		/>	<br />
+		
+		<button type="submit" style="cursor: pointer;">전송</button>
+	</form>
+	
+	<hr color="red"	/>
+	
+	<h3>form --> ex12</h3>
+	<form th:action="@{/param/ex12}" method="post" enctype="multipart/form-data">
+		<label for="save">파일 : </label>
+		<input type="file" name="save" id="save" required		/>	<br />
+		
+		<button type="submit">전송</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>switch 문 - 자바의 switch문과 같다.</h3>
+	<div th:switch="${age}">
+		<span th:case="30">30대</span>
+		<span th:case="20">20대</span>
+		<span th:case="10">10대</span>
+	</div>
+</body>
+</html>

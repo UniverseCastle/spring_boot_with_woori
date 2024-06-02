@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html 	xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>질문 등록</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+		<h5 class="my-3 border-bottom pd-2">질문 등록</h5>
+		<form th:object="${questionForm}" method="post">				<!-- 5.30) th:action 속성 없앰. url 기준으로 전송되는 규칙이 있음 -->
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"	/>	<!-- 수정 -->
+			<div th:replace="~{form_errors :: formErrorsFragment}"></div>
+<!-- 			<div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}"> -->
+<!-- 				<div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div> -->
+<!-- 			</div> -->
+			<div class="mb-3">
+				<label for="subject" class="form-label">제목</label>
+				<input type="text" th:field="*{subject}" id="subject" class="form-control"	/>	<!-- 이름 대신 사용해야하므로 name 지움 (th:field) -->
+			</div>
+			<div class="mb-3">
+				<label for="content">내용</label>
+				<textarea th:field="*{content}" id="content" class="form-control" rows="10"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary" style="float: right;">저장하기</button>
+		</form>
+	</div>
+</body>
+</html>

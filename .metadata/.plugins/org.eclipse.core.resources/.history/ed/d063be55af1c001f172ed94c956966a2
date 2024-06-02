@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html	xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" text="text/css" th:href="@{/bootstrap.min.css}"	/> -->
+
+</head>
+
+<body>
+	<h2>Hello Question_list</h2>
+	
+	<div layout:fragment="content" class="container my-3">
+		<table class="table">
+			<thead class="table-dark">
+				<tr>
+					<th>글번호</th>
+					<th>제목</th>
+					<th>작성일시</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="question, loop : ${paging}">
+					<td th:text="${loop.count}"></td>
+					<td>
+						<a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+					</td>
+					<td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<!-- 페이징 처리 -->
+		<div th:if="${!paging.isEmpty()}">
+			<ul class="pagination justify-content-center">
+				<li class="page-item" th:classapend="${!paging.hasPrevious} ? 'disabled'">
+					<a class="page-link" th:href="@{|?page=${paging.number-1}|}">
+						<span>이전</span>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		
+		<a th:href="@{/question/create}" class="btn btn-primary" style="float: right;">질문 등록</a>
+	</div>
+</body>
+</html>

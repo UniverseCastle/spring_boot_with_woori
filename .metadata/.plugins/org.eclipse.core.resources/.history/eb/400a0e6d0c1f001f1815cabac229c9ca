@@ -1,0 +1,11 @@
+package com.example.sbp;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CommonUtil {
+
+//	public String markdown(String markdown) {	// commonMark~ 임포트
+//		Parser parser = Parser.builder().
+//	}
+}

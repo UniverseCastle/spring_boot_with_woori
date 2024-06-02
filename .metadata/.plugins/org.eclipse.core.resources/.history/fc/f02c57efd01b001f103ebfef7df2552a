@@ -1,0 +1,40 @@
+package com.example.sbp.question;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Controller
+public class QuestionController {
+	
+	private final QuestionService questionService;
+	
+	@GetMapping("/")			// http://localhost:8080 '/' <- 이 부분
+	public String root() {		// Question 의 메인페이지 - list
+		
+		return "redirect:/question/list";
+	}
+	
+	@GetMapping("/question/list")
+	public String list(Model model) {
+		List<Question> questionList = this.questionService.getList();
+		model.addAttribute("questionList", questionList);
+		
+		return "question_list";
+	}
+	
+	@GetMapping("/question/detail/{id}")	// http://localhost:8080/question/list/2 번호 바뀜
+	public String detail(Model model, @PathVariable("id") Integer id) {	
+											// @PathVariable("id") id와 매핑된 id 이름이 동일해야함
+		Question question = this.questionService.getQuestion(id);
+		model.addAttribute("question", question);
+		
+		return "question_detail";
+	}
+}

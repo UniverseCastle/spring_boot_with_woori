@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	- th:object
+		타임리프의 변수 선언 속성
+		적용된 태그 내부에서만 사용가능
+	- th:object="${session.user}"
+		div 태그 내에서만 사용 가능한 지역변수로 session에 저장된 user를 지역변수로 선언함
+	- th:text="*{name}"
+		변수로 저장된 user의 getName() 메서드 사용
+	- th:text="*{age}"
+		변수로 저장된 user의 getAge() 메서드 사용
+	
+	<h2>선택 변수 표현식</h2>
+	<div th:object="${session.user}">
+		<p>Name : <span th:text="*{name}"></span></p>
+		<p>Age : <span th:text="*{age}"></span></p>
+	</div>
+	
+	<h2>변수 표현식</h2>
+	<div>
+		<p>Name : <span th:text="${session.user.name}"></span></p>
+		<p>Age : <span th:text="${session.user.age}"></span></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<h2>프래그먼트 표현식</h2>
+- th:fragment="title"
+	fragment 속성을 사용하여 title 이름으로 설정
+	포함시킬 페이지에서 title 이름으로 호출한다.
+<div th:fragment="title">제목입니다.</div>
+<div th:fragment="content">내용입니다.</div>
+
+- th:fragment="info()"
+	자바의 메서드처럼 사용 가능
+	각각 ${name}, ${tel} 에 적용된다.
+<div th:fragment="info(name, tel)">
+	이름		: <span th:text="${name}"></span>,
+	연락처	: <span th:text="${tel}"></span>
+</div>

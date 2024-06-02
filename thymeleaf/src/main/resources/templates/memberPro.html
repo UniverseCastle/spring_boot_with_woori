@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원가입 결과</title>
+</head>
+<body>
+	<h1>회원가입 결과</h1>
+	<p th:text="${message}"></p>
+	
+	<h2>회원 정보</h2>
+	<p>사용자 : <span th:text="${member.userName}"></span></p>
+	<p>비밀번호 : <span th:text="${member.pw}"></span></p>
+	<p>이메일 : <span th:text="${member.email}"></span></p>
+	<p>성별 : <span th:text="${member.gender}"></span></p>
+	<p>국가 : <span th:text="${member.country}"></span></p>
+	<p>취미 : <span th:each="hobby : ${member.hobbies}" th:text="${hobby} + ' '"></span></p>
+	<a th:href="@{/th/memberForm}">다시 가입하기</a>
+</body>
+</html>

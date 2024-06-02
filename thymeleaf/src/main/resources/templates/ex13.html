@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>th:value 속성 활용</h3>
+	- input 태그에 사용되는 value 속성에 변수표현식을 사용할 경우
+	  표현식이 적용되지 않는다.
+	- 타임리프는 기본 HTML에 적용하였기 때문에 HTML 기능이 우선 적용된다.
+	- HTML은 표현언어를 처리하지 못한다.
+	
+	- $, @, *, ~ 다양한 표현식은 반드시 타임리프 속성에 사용해야 한다.
+	
+	<h3>input 태그의 value 속성에 ${}변수표현식 사용 시 th:value 속성 활용</h3>
+	<input type="text" value="${age}"		/>	<br />
+	<input type="text" th:value="${age}"	/>	<br />
+</body>
+</html>
